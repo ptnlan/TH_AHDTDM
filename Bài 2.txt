@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int kiem_tra_so_chinh_phuong(int x) {
+    int can_bac_hai = sqrt(x);
+    return can_bac_hai * can_bac_hai == x;
+}
+
+
+void dem_va_in_so_chinh_phuong(int n) {
+    printf("Cac so chinh phuong nho hon %d la:\n", n);
+    int count = 0;
+    for (int i = 1; i < n; i++) {
+        if (kiem_tra_so_chinh_phuong(i)) {
+            printf("%d\n", i);
+            count++;
+        }
+    }
+    printf("Tong so chinh phuong: %d\n", count);
+}
+
+int main() {
+    int n;
+    printf("Nhap mot so nguyen duong n: ");
+    scanf("%d", &n);
+    dem_va_in_so_chinh_phuong(n);
+    return 0;
+}
